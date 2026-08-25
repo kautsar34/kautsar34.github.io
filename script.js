@@ -620,7 +620,7 @@ window.closeLightbox = function(event) {
 // 11. COPY EMAIL & TOAST NOTIFICATION
 // ==========================================
 window.copyEmail = function() {
-    const email = "kautsarputraramadhan34@gmail.com";
+    const email = "kautsarputra04@gmail.com";
     navigator.clipboard.writeText(email).then(() => {
         showToast("Alamat email berhasil disalin ke clipboard!");
     }).catch(() => {
