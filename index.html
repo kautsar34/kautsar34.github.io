@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portofolio Kautsar Putra Ramadhan - Mahasiswa Sistem Informasi Universitas Budi Luhur, Web Developer, UI/UX Designer & System Analyst.">
+    <meta name="keywords" content="Kautsar Putra Ramadhan, Portofolio, Frontend Developer, UI/UX Designer, System Analyst, Budi Luhur">
+    <meta name="author" content="Kautsar Putra Ramadhan">
+    <title>Kautsar Putra Ramadhan | Portofolio Web & UI/UX</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Decorative Gradients -->
+    <div class="bg-decoration">
+        <div class="glow-sphere glow-1"></div>
+        <div class="glow-sphere glow-2"></div>
+        <div class="glow-sphere glow-3"></div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-mark"><i class="fa-solid fa-code"></i></span>
+                <span class="logo-text">Kautsar<span>.dev</span></span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active"><i class="fa-solid fa-house"></i> Beranda</a></li>
+                    <li><a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> Tentang</a></li>
+                    <li><a href="#skills" class="nav-link"><i class="fa-solid fa-sliders"></i> Keahlian</a></li>
+                    <li><a href="#projects" class="nav-link"><i class="fa-solid fa-laptop-code"></i> Proyek</a></li>
+                    <li><a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Pendidikan</a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Kontak</a></li>
+                </ul>
+                <div class="mobile-nav-footer">
+                    <button onclick="openCvModal()" class="btn primary-btn btn-sm w-full"><i class="fa-solid fa-file-pdf"></i> Pratinjau CV</button>
+                </div>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Theme Toggle Button -->
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Ganti Tema" title="Ganti Mode Gelap / Terang">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <!-- CV Quick Button in Desktop Header -->
+                <button onclick="openCvModal()" class="btn nav-btn desktop-only"><i class="fa-solid fa-id-card"></i> CV Saya</button>
+
+                <!-- Mobile Menu Button -->
+                <button class="menu-toggle" id="mobile-menu-btn" aria-label="Buka Menu Navigasi">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overlay Backdrop for Mobile Menu -->
+    <div class="nav-backdrop" id="nav-backdrop"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="status-pulse"></span>
+                        <span>Tersedia untuk Magang & Proyek Web / UI/UX</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        Halo, Saya <br>
+                        <span class="gradient-text">Kautsar Putra R.</span>
+                    </h1>
+
+                    <div class="typing-container">
+                        <span class="typing-prefix">Fokus: </span>
+                        <span id="typing-text" class="typing-highlight"></span>
+                        <span class="cursor">&nbsp;</span>
+                    </div>
+
+                    <p class="hero-desc">
+                        Mahasiswa <strong>Sistem Informasi Universitas Budi Luhur</strong> yang bersemangat dalam merancang antarmuka <em>UI/UX interaktif</em>, mengembangkan aplikasi web yang cepat dan responsif, serta menganalisis alur sistem secara efisien.
+                    </p>
+
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn primary-btn">
+                            <span>Jelajahi Karya</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn secondary-btn">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Hubungi Saya</span>
+                        </a>
+                        <button onclick="openCvModal()" class="btn glass-btn">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span>Pratinjau CV</span>
+                        </button>
+                    </div>
+
+                    <!-- Quick Stats Bar -->
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <span class="stat-number">4+</span>
+                            <span class="stat-label">Proyek Selesai</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-card">
+                            <span class="stat-number">S1</span>
+                            <span class="stat-label">Sistem Informasi</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-card">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Pilar Keahlian</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image & Frame -->
+                <div class="hero-visual">
+                    <div class="hero-image-wrapper">
+                        <div class="blob-glow"></div>
+                        <div class="img-frame">
+                            <img src="image/1.jpeg" alt="Foto Profil Kautsar Putra Ramadhan" loading="eager">
+                        </div>
+
+                        <!-- Floating Badges -->
+                        <div class="floating-badge badge-top">
+                            <div class="badge-icon"><i class="fa-solid fa-layer-group"></i></div>
+                            <div class="badge-info">
+                                <strong>UI/UX Design</strong>
+                                <span>Figma & Prototyping</span>
+                            </div>
+                        </div>
+
+                        <div class="floating-badge badge-bottom">
+                            <div class="badge-icon code-icon"><i class="fa-solid fa-code"></i></div>
+                            <div class="badge-info">
+                                <strong>Frontend Dev</strong>
+                                <span>HTML, CSS, JS, Laravel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-user"></i> Mengenal Lebih Dekat</span>
+                    <h2 class="section-title">Tentang <span>Saya</span></h2>
+                    <p class="section-subtitle">Perpaduan antara pemikiran analitis sistem dan kreativitas desain antarmuka digital</p>
+                </div>
+
+                <div class="about-grid">
+                    <!-- About Visual / Image -->
+                    <div class="about-visual">
+                        <div class="about-image-card">
+                            <img src="image/2.jpeg" alt="Kautsar Putra Ramadhan" loading="lazy">
+                            <div class="about-card-badge">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <div>
+                                    <h4>Univ. Budi Luhur</h4>
+                                    <p>Sistem Informasi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- About Details -->
+                    <div class="about-text-content">
+                        <h3 class="about-heading">Membangun Solusi Digital yang Bermanfaat & Menarik</h3>
+                        <p class="about-paragraph">
+                            Saya adalah mahasiswa <strong>Sistem Informasi di Universitas Budi Luhur</strong> dengan orientasi kuat pada pencapaian di bidang teknologi dan analisis bisnis. Memiliki kombinasi keahlian teknis dan kreatif, mencakup pengembangan web antarmuka (Frontend), perancangan UI/UX berbasis <em>Design Thinking</em>, penyusunan diagram arsitektur sistem (UML & Flowchart), serta media kreatif.
+                        </p>
+                        <p class="about-paragraph">
+                            Saya terbiasa memecahkan masalah dengan pendekatan terstruktur, cepat beradaptasi dengan teknologi baru, dan siap berkolaborasi secara profesional untuk peran pengembangan perangkat lunak maupun media digital.
+                        </p>
+
+                        <!-- Key Pillars Grid -->
+                        <div class="about-pillars">
+                            <div class="pillar-item">
+                                <div class="pillar-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                                <div>
+                                    <h4>Pengembangan Web</h4>
+                                    <p>Membangun antarmuka modern, interaktif, responsif, dan mudah digunakan.</p>
+                                </div>
+                            </div>
+                            <div class="pillar-item">
+                                <div class="pillar-icon"><i class="fa-solid fa-palette"></i></div>
+                                <div>
+                                    <h4>UI/UX & Desain</h4>
+                                    <p>Riset alur pengguna, wireframe, prototipe interaktif di Figma.</p>
+                                </div>
+                            </div>
+                            <div class="pillar-item">
+                                <div class="pillar-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                                <div>
+                                    <h4>Analisis Sistem</h4>
+                                    <p>Penyusunan UML, Use Case, ERD, dan pemodelan alur bisnis.</p>
+                                </div>
+                            </div>
+                            <div class="pillar-item">
+                                <div class="pillar-icon"><i class="fa-solid fa-clapperboard"></i></div>
+                                <div>
+                                    <h4>Media Kreatif</h4>
+                                    <p>Video editing, content visual, dan WordPress web publishing.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="about-actions">
+                            <button onclick="openCvModal()" class="btn primary-btn">
+                                <i class="fa-solid fa-file-pdf"></i>
+                                <span>Lihat & Unduh CV</span>
+                            </button>
+                            <a href="#contact" class="btn secondary-btn">
+                                <i class="fa-solid fa-comments"></i>
+                                <span>Ajak Diskusi</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-sliders"></i> Portofolio Kompetensi</span>
+                    <h2 class="section-title">Keahlian <span>Utama</span></h2>
+                    <p class="section-subtitle">Teknologi dan perangkat yang saya gunakan untuk mewujudkan produk digital</p>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Skill Card 1: Frontend -->
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <div class="icon-box frontend-icon"><i class="fa-solid fa-code"></i></div>
+                            <span class="skill-counter">01</span>
+                        </div>
+                        <h3>Frontend Development</h3>
+                        <p>Membangun struktur dan antarmuka web modern dengan kode yang rapi, semantik, dan responsif di berbagai ukuran layar.</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fa-brands fa-html5"></i> HTML5</span>
+                            <span class="skill-tag"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                            <span class="skill-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+                            <span class="skill-tag"><i class="fa-brands fa-bootstrap"></i> Bootstrap 5</span>
+                            <span class="skill-tag"><i class="fa-solid fa-mobile-screen"></i> Responsive Web</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 2: UI/UX -->
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <div class="icon-box uiux-icon"><i class="fa-solid fa-layer-group"></i></div>
+                            <span class="skill-counter">02</span>
+                        </div>
+                        <h3>UI/UX Design</h3>
+                        <p>Merancang pengalaman digital intuitif yang memprioritaskan kebutuhan pengguna lewat metodologi <em>Design Thinking</em>.</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fa-brands fa-figma"></i> Figma</span>
+                            <span class="skill-tag"><i class="fa-solid fa-compass-drafting"></i> Wireframing</span>
+                            <span class="skill-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Prototyping</span>
+                            <span class="skill-tag"><i class="fa-solid fa-users-viewfinder"></i> User Research</span>
+                            <span class="skill-tag"><i class="fa-solid fa-lightbulb"></i> Design Thinking</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 3: System Analyst -->
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <div class="icon-box system-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                            <span class="skill-counter">03</span>
+                        </div>
+                        <h3>System Analysis</h3>
+                        <p>Menganalisis kebutuhan bisnis dan menerjemahkannya ke dalam dokumentasi serta diagram arsitektur sistem.</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fa-solid fa-sitemap"></i> Astah UML</span>
+                            <span class="skill-tag"><i class="fa-solid fa-draw-polygon"></i> Draw.io</span>
+                            <span class="skill-tag"><i class="fa-solid fa-circle-nodes"></i> Use Case & DFD</span>
+                            <span class="skill-tag"><i class="fa-solid fa-database"></i> ERD / Relasi DB</span>
+                            <span class="skill-tag"><i class="fa-solid fa-list-check"></i> Requirement Analysis</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 4: Tools & Creative -->
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <div class="icon-box tools-icon"><i class="fa-solid fa-toolbox"></i></div>
+                            <span class="skill-counter">04</span>
+                        </div>
+                        <h3>Tools & Media Digital</h3>
+                        <p>Alat pendukung produktivitas, manajemen repositori, CMS web, dan editing media kreatif.</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fa-brands fa-wordpress"></i> WordPress</span>
+                            <span class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git & GitHub</span>
+                            <span class="skill-tag"><i class="fa-brands fa-laravel"></i> Laravel 8 Stack</span>
+                            <span class="skill-tag"><i class="fa-solid fa-film"></i> Video Editing</span>
+                            <span class="skill-tag"><i class="fa-solid fa-terminal"></i> VS Code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-laptop-code"></i> Karya Nyata</span>
+                    <h2 class="section-title">Hasil <span>Proyek</span></h2>
+                    <p class="section-subtitle">Beberapa proyek pengembangan web dan perancangan antarmuka yang telah saya selesaikan</p>
+                </div>
+
+                <!-- Project Filter Tabs -->
+                <div class="projects-filter-bar">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fa-solid fa-border-all"></i> Semua Proyek
+                    </button>
+                    <button class="filter-btn" data-filter="web">
+                        <i class="fa-solid fa-code"></i> Web Development
+                    </button>
+                    <button class="filter-btn" data-filter="uiux">
+                        <i class="fa-solid fa-palette"></i> UI/UX Design
+                    </button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid" id="projects-grid">
+                    
+                    <!-- Card 1: SIMAT -->
+                    <article class="project-card" data-category="web">
+                        <div class="project-media">
+                            <div class="project-carousel" data-carousel="simat">
+                                <div class="carousel-track">
+                                    <img src="image/simat.jpg" alt="SIMAT Screenshot 1" class="carousel-img active" onclick="openLightbox('image/simat.jpg', 'SIMAT - Gateway Login & Autentikasi Pengguna')">
+                                    <img src="image/simat 2.jpg" alt="SIMAT Screenshot 2" class="carousel-img" onclick="openLightbox('image/simat 2.jpg', 'SIMAT - Dashboard Manajemen Hak Akses')">
+                                </div>
+                                <button class="carousel-btn prev" onclick="moveCarouselSlide(this, -1)" aria-label="Gambar Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
+                                <button class="carousel-btn next" onclick="moveCarouselSlide(this, 1)" aria-label="Gambar Selanjutnya"><i class="fa-solid fa-chevron-right"></i></button>
+                                <div class="carousel-indicator">
+                                    <span class="dot active"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <span class="project-category-badge web-badge"><i class="fa-solid fa-globe"></i> Web App</span>
+                        </div>
+
+                        <div class="project-content">
+                            <h3 class="project-title">SIMAT (Sistem Masuk Tunggal)</h3>
+                            <p class="project-desc">
+                                Platform Single Sign-On (SSO) dan gateway login terpusat yang mengatur dan memvalidasi akses pengguna secara aman sesuai paket langganan perangkat lunak mereka.
+                            </p>
+                            <div class="project-tags">
+                                <span><i class="fa-brands fa-laravel"></i> Laravel 8</span>
+                                <span><i class="fa-brands fa-bootstrap"></i> Bootstrap 5</span>
+                                <span><i class="fa-solid fa-database"></i> MySQL</span>
+                            </div>
+                            <div class="project-footer">
+                                <button class="btn-project-action" onclick="openLightbox('image/simat.jpg', 'SIMAT - Sistem Masuk Tunggal')">
+                                    <i class="fa-solid fa-expand"></i> Pratinjau Gambar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2: EcoBank UI/UX Mobile -->
+                    <article class="project-card" data-category="uiux">
+                        <div class="project-media">
+                            <div class="project-img-single" onclick="openLightbox('image/Cover (2).png', 'EcoBank - UI/UX Mobile App Bank Sampah Cerdas')">
+                                <img src="image/Cover (2).png" alt="Desain Aplikasi Mobile EcoBank" loading="lazy">
+                                <div class="img-overlay-hover">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                    <span>Perbesar Desain</span>
+                                </div>
+                            </div>
+                            <span class="project-category-badge uiux-badge"><i class="fa-brands fa-figma"></i> UI/UX Concept</span>
+                        </div>
+
+                        <div class="project-content">
+                            <h3 class="project-title">Desain Aplikasi Mobile EcoBank</h3>
+                            <p class="project-desc">
+                                Konsep UI/UX aplikasi Bank Sampah digital berbasis <em>Design Thinking</em>, memfasilitasi penukaran sampah terpilah menjadi poin dan saldo e-wallet secara praktis.
+                            </p>
+                            <div class="project-tags">
+                                <span><i class="fa-brands fa-figma"></i> Figma</span>
+                                <span><i class="fa-solid fa-mobile-screen"></i> Mobile UI</span>
+                                <span><i class="fa-solid fa-lightbulb"></i> Design Thinking</span>
+                            </div>
+                            <div class="project-footer">
+                                <a href="https://www.figma.com/design/ZDkIf9xVr3fD5y0AYjyzYI/Bank-Sampah?node-id=0-1&t=w8WGQfaeNAvbJyiz-1" class="btn primary-btn btn-sm" target="_blank" rel="noopener noreferrer">
+                                    <span>Buka di Figma</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                                <button class="btn-project-action" onclick="openLightbox('image/Cover (2).png', 'EcoBank - Desain UI/UX')">
+                                    <i class="fa-solid fa-expand"></i> Lihat
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3: SIPEL -->
+                    <article class="project-card" data-category="web">
+                        <div class="project-media">
+                            <div class="project-carousel" data-carousel="sipel">
+                                <div class="carousel-track">
+                                    <img src="image/sipel.jpg" alt="SIPEL Screenshot 1" class="carousel-img active" onclick="openLightbox('image/sipel.jpg', 'SIPEL - Sistem Pelayaran Dashboard')">
+                                    <img src="image/sipel 2.jpg" alt="SIPEL Screenshot 2" class="carousel-img" onclick="openLightbox('image/sipel 2.jpg', 'SIPEL - Modul Pendataan Kapal & Logistik')">
+                                </div>
+                                <button class="carousel-btn prev" onclick="moveCarouselSlide(this, -1)" aria-label="Gambar Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
+                                <button class="carousel-btn next" onclick="moveCarouselSlide(this, 1)" aria-label="Gambar Selanjutnya"><i class="fa-solid fa-chevron-right"></i></button>
+                                <div class="carousel-indicator">
+                                    <span class="dot active"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <span class="project-category-badge web-badge"><i class="fa-solid fa-globe"></i> Web App</span>
+                        </div>
+
+                        <div class="project-content">
+                            <h3 class="project-title">SIPEL (Sistem Pelayaran)</h3>
+                            <p class="project-desc">
+                                Platform sistem informasi digital untuk mendata operasional pelayaran, manifest keberangkatan kapal, serta monitoring logistik maritim secara terstruktur.
+                            </p>
+                            <div class="project-tags">
+                                <span><i class="fa-brands fa-laravel"></i> Laravel 8</span>
+                                <span><i class="fa-brands fa-bootstrap"></i> Bootstrap 5</span>
+                                <span><i class="fa-solid fa-ship"></i> Logistik Maritim</span>
+                            </div>
+                            <div class="project-footer">
+                                <button class="btn-project-action" onclick="openLightbox('image/sipel.jpg', 'SIPEL - Sistem Pelayaran')">
+                                    <i class="fa-solid fa-expand"></i> Pratinjau Gambar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4: Lumobox -->
+                    <article class="project-card" data-category="web">
+                        <div class="project-media">
+                            <div class="project-img-single" onclick="openLightbox('image/lomobox.jpg', 'Lumobox - Dashboard Manajemen Keuangan')">
+                                <img src="image/lomobox.jpg" alt="Lumobox Financial Dashboard" loading="lazy">
+                                <div class="img-overlay-hover">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                    <span>Perbesar Gambar</span>
+                                </div>
+                            </div>
+                            <span class="project-category-badge web-badge"><i class="fa-solid fa-globe"></i> Web App</span>
+                        </div>
+
+                        <div class="project-content">
+                            <h3 class="project-title">Lumobox Financial Dashboard</h3>
+                            <p class="project-desc">
+                                Platform aplikasi web untuk membantu pengelolaan, monitoring kas, dan rekapitulasi data transaksi perbankan dengan antarmuka yang bersih dan mudah digunakan.
+                            </p>
+                            <div class="project-tags">
+                                <span><i class="fa-brands fa-laravel"></i> Laravel 8</span>
+                                <span><i class="fa-brands fa-bootstrap"></i> Bootstrap 5</span>
+                                <span><i class="fa-solid fa-chart-line"></i> FinTech</span>
+                            </div>
+                            <div class="project-footer">
+                                <button class="btn-project-action" onclick="openLightbox('image/lomobox.jpg', 'Lumobox - Manajemen Keuangan')">
+                                    <i class="fa-solid fa-expand"></i> Pratinjau Gambar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Achievements Section -->
+        <section id="education" class="section education-section bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Jejak Akademik & Dedikasi</span>
+                    <h2 class="section-title">Pendidikan & <span>Pencapaian</span></h2>
+                    <p class="section-subtitle">Latar belakang studi, pengembangan kompetensi diri, dan rekam jejak penyelesaian proyek</p>
+                </div>
+
+                <div class="education-grid">
+                    <!-- Timeline Card: Pendidikan -->
+                    <div class="edu-card">
+                        <div class="edu-card-header">
+                            <div class="edu-icon"><i class="fa-solid fa-building-columns"></i></div>
+                            <div>
+                                <span class="edu-year">Sedang Ditempuh</span>
+                                <h3>S1 - Sistem Informasi</h3>
+                                <h4 class="edu-institution">Universitas Budi Luhur, Jakarta</h4>
+                            </div>
+                        </div>
+                        <p class="edu-desc">
+                            Mempelajari rekayasa perangkat lunak, perancangan basis data relasional, pemodelan sistem informasi bisnis (UML, Use Case, DFD), serta pemrograman web terapan untuk kebutuhan industri digital.
+                        </p>
+                        <div class="edu-highlights">
+                            <span><i class="fa-solid fa-check-circle"></i> Analisis Sistem Bisnis</span>
+                            <span><i class="fa-solid fa-check-circle"></i> Web Development</span>
+                            <span><i class="fa-solid fa-check-circle"></i> UI/UX Design Principles</span>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Card: Pencapaian & Proyek -->
+                    <div class="edu-card">
+                        <div class="edu-card-header">
+                            <div class="edu-icon trophy-icon"><i class="fa-solid fa-award"></i></div>
+                            <div>
+                                <span class="edu-year">Portofolio & Praktik</span>
+                                <h3>Pencapaian & Pengembangan Proyek</h3>
+                                <h4 class="edu-institution">Karya Mandiri & Tim</h4>
+                            </div>
+                        </div>
+                        <ul class="achievement-list">
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <div>
+                                    <strong>Penyelesaian Aplikasi Sistem Informasi Nyata</strong>
+                                    <p>Berhasil mengembangkan sistem SIMAT, SIPEL, dan Lumobox menggunakan stack Laravel & Bootstrap dengan alur data yang valid.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <div>
+                                    <strong>Desain Prototipe UI/UX EcoBank</strong>
+                                    <p>Merancang solusi interaktif berbasis Design Thinking untuk aplikasi pengelolaan bank sampah di Figma.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <div>
+                                    <strong>Dokumentasi Analisis Sistem Komprehensif</strong>
+                                    <p>Menyusun diagram alir, Use Case, dan Entity Relationship Diagram (ERD) standar industri menggunakan Astah & Draw.io.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-paper-plane"></i> Mari Berkolaborasi</span>
+                    <h2 class="section-title">Hubungi <span>Saya</span></h2>
+                    <p class="section-subtitle">Tertarik untuk berdiskusi tentang peluang magang, proyek web, atau desain UI/UX? Saya siap terhubung!</p>
+                </div>
+
+                <div class="contact-wrapper">
+                    <!-- Left: Contact Details -->
+                    <div class="contact-info-panel">
+                        <h3>Informasi Kontak</h3>
+                        <p class="contact-info-sub">Jangan ragu untuk menghubungi saya melalui saluran berikut untuk diskusi maupun kolaborasi:</p>
+
+                        <div class="contact-cards-list">
+                            <!-- Email Card with Copy Button -->
+                            <div class="contact-item-card">
+                                <div class="contact-icon email-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="contact-item-details">
+                                    <span class="contact-item-label">Email</span>
+                                    <a href="mailto:kautsarputraramadhan34@gmail.com" class="contact-item-val" id="email-text">kautsarputraramadhan34@gmail.com</a>
+                                </div>
+                                <button class="btn-copy" onclick="copyEmail()" title="Salin Alamat Email" aria-label="Salin Email">
+                                    <i class="fa-solid fa-copy"></i>
+                                </button>
+                            </div>
+
+                            <!-- WhatsApp Direct -->
+                            <div class="contact-item-card">
+                                <div class="contact-icon wa-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                                <div class="contact-item-details">
+                                    <span class="contact-item-label">WhatsApp</span>
+                                    <a href="https://wa.me/?text=Halo%20Kautsar,%20saya%20tertarik%20dengan%20portofolio%20Anda" target="_blank" rel="noopener noreferrer" class="contact-item-val">Kirim Pesan WhatsApp</a>
+                                </div>
+                                <a href="https://wa.me/?text=Halo%20Kautsar,%20saya%20tertarik%20dengan%20portofolio%20Anda" target="_blank" rel="noopener noreferrer" class="btn-link-action" aria-label="Buka WhatsApp">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+
+                            <!-- LinkedIn -->
+                            <div class="contact-item-card">
+                                <div class="contact-icon linkedin-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                                <div class="contact-item-details">
+                                    <span class="contact-item-label">LinkedIn</span>
+                                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-item-val">Kautsar Putra Ramadhan</a>
+                                </div>
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-link-action" aria-label="Buka LinkedIn">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+
+                            <!-- GitHub -->
+                            <div class="contact-item-card">
+                                <div class="contact-icon github-icon"><i class="fa-brands fa-github"></i></div>
+                                <div class="contact-item-details">
+                                    <span class="contact-item-label">GitHub</span>
+                                    <a href="https://github.com/kautsar34" target="_blank" rel="noopener noreferrer" class="contact-item-val">github.com/kautsar34</a>
+                                </div>
+                                <a href="https://github.com/kautsar34" target="_blank" rel="noopener noreferrer" class="btn-link-action" aria-label="Buka GitHub">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+
+                            <!-- Location -->
+                            <div class="contact-item-card">
+                                <div class="contact-icon location-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="contact-item-details">
+                                    <span class="contact-item-label">Lokasi</span>
+                                    <span class="contact-item-val">Jakarta, Indonesia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Quick Message Form -->
+                    <div class="contact-form-panel">
+                        <h3>Kirim Pesan Cepat</h3>
+                        <p class="form-sub">Tuliskan pesan Anda di bawah ini untuk langsung terhubung dengan saya:</p>
+
+                        <form id="contact-form" onsubmit="handleContactSubmit(event)">
+                            <div class="form-group">
+                                <label for="sender-name"><i class="fa-solid fa-user"></i> Nama Lengkap</label>
+                                <input type="text" id="sender-name" placeholder="Contoh: Budi Pratama" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="sender-email"><i class="fa-solid fa-envelope"></i> Alamat Email</label>
+                                <input type="email" id="sender-email" placeholder="nama@email.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="sender-subject"><i class="fa-solid fa-tag"></i> Subjek / Topik</label>
+                                <input type="text" id="sender-subject" placeholder="Peluang Magang / Tawaran Proyek" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="sender-message"><i class="fa-solid fa-message"></i> Pesan</label>
+                                <textarea id="sender-message" rows="4" placeholder="Tuliskan pesan atau detail kebutuhan Anda di sini..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn primary-btn w-full">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Kirim Pesan Sekarang</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#home" class="logo">
+                    <span class="logo-mark"><i class="fa-solid fa-code"></i></span>
+                    <span class="logo-text">Kautsar<span>.dev</span></span>
+                </a>
+                <p>Mahasiswa Sistem Informasi Universitas Budi Luhur berfokus pada Frontend Web & UI/UX Design.</p>
+            </div>
+
+            <div class="footer-nav">
+                <h4>Navigasi Cepat</h4>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang Saya</a></li>
+                    <li><a href="#skills">Keahlian</a></li>
+                    <li><a href="#projects">Hasil Proyek</a></li>
+                    <li><a href="#education">Pendidikan</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>Terhubung</h4>
+                <div class="social-links">
+                    <a href="https://github.com/kautsar34" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="mailto:kautsarputraramadhan34@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <button onclick="openCvModal()" class="btn outline-btn btn-sm mt-3"><i class="fa-solid fa-file-pdf"></i> Unduh CV (PDF)</button>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 <strong>Kautsar Putra Ramadhan</strong>. Seluruh hak cipta dilindungi undang-undang.</p>
+                <p class="footer-credit">Dibuat dengan HTML5, CSS3, & Vanilla JavaScript.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Kembali ke atas" title="Kembali ke Atas">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- MODAL POPUP CV -->
+    <div id="cvModal" class="cv-modal" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle">
+        <div class="cv-modal-content">
+            <div class="cv-modal-header">
+                <h3 id="cvModalTitle"><i class="fa-solid fa-id-card"></i> Pratinjau Curriculum Vitae</h3>
+                <div class="modal-header-actions">
+                    <a href="cv/cv%20kautsar%20putra%20ramadhan.pdf" target="_blank" class="modal-action-btn" title="Buka di Tab Baru">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <button class="cv-close-btn" onclick="closeCvModal()" aria-label="Tutup Pratinjau">&times;</button>
+                </div>
+            </div>
+            
+            <div class="cv-modal-body">
+                <iframe src="cv/cv%20kautsar%20putra%20ramadhan.pdf" type="application/pdf" title="CV Kautsar Putra Ramadhan">
+                    <div class="pdf-fallback-box">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        <h4>Pratinjau PDF di Browser Tidak Tersedia</h4>
+                        <p>Silakan klik tombol di bawah untuk langsung membuka atau mengunduh berkas CV.</p>
+                        <a href="cv/cv%20kautsar%20putra%20ramadhan.pdf" download="CV_Kautsar_Putra_Ramadhan.pdf" class="btn primary-btn">
+                            <i class="fa-solid fa-download"></i> Unduh Berkas PDF
+                        </a>
+                    </div>
+                </iframe>
+            </div>
+            
+            <div class="cv-modal-footer">
+                <button onclick="closeCvModal()" class="btn secondary-btn">Tutup</button>
+                <a href="cv/cv%20kautsar%20putra%20ramadhan.pdf" download="CV_Kautsar_Putra_Ramadhan.pdf" class="btn primary-btn">
+                    <i class="fa-solid fa-download"></i> Unduh File PDF
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- IMAGE LIGHTBOX MODAL -->
+    <div id="imageLightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true" onclick="closeLightbox(event)">
+        <div class="lightbox-container" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeLightbox()" aria-label="Tutup Gambar">&times;</button>
+            <div class="lightbox-content">
+                <img id="lightbox-img" src="" alt="Pratinjau Proyek">
+                <p id="lightbox-caption" class="lightbox-caption"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast-notification">
+        <i class="fa-solid fa-circle-check toast-icon"></i>
+        <span id="toast-message">Email berhasil disalin ke clipboard!</span>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
