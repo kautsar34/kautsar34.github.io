@@ -249,75 +249,91 @@
                     <p class="section-subtitle">Teknologi dan perangkat yang saya gunakan untuk mewujudkan produk digital</p>
                 </div>
 
-                <div class="skills-grid">
-                    <!-- Skill Card 1: Frontend -->
-                    <div class="skill-card">
-                        <div class="skill-card-header">
-                            <div class="icon-box frontend-icon"><i class="fa-solid fa-code"></i></div>
-                            <span class="skill-counter">01</span>
-                        </div>
-                        <h3>Frontend Development</h3>
-                        <p>Membangun struktur dan antarmuka web modern dengan kode yang rapi, semantik, dan responsif di berbagai ukuran layar.</p>
-                        <div class="skill-tags">
-                            <span class="skill-tag"><i class="fa-brands fa-html5"></i> HTML5</span>
-                            <span class="skill-tag"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
-                            <span class="skill-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
-                            <span class="skill-tag"><i class="fa-brands fa-bootstrap"></i> Bootstrap 5</span>
-                            <span class="skill-tag"><i class="fa-solid fa-mobile-screen"></i> Responsive Web</span>
+                <!-- Skills Carousel Wrapper -->
+                <div class="cards-carousel-wrapper" id="skills-carousel">
+                    <button class="carousel-nav-arrow prev" id="skills-prev-btn" aria-label="Keahlian Sebelumnya">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <div class="cards-carousel-viewport" id="skills-viewport">
+                        <div class="cards-carousel-track" id="skills-track">
+                            <!-- Skill Card 1: Frontend -->
+                            <div class="skill-card">
+                                <div class="skill-card-header">
+                                    <div class="icon-box frontend-icon"><i class="fa-solid fa-code"></i></div>
+                                    <span class="skill-counter">01</span>
+                                </div>
+                                <h3>Frontend Development</h3>
+                                <p>Membangun struktur dan antarmuka web modern dengan kode yang rapi, semantik, dan responsif di berbagai ukuran layar.</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag"><i class="fa-brands fa-html5"></i> HTML5</span>
+                                    <span class="skill-tag"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                                    <span class="skill-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+                                    <span class="skill-tag"><i class="fa-brands fa-bootstrap"></i> Bootstrap 5</span>
+                                    <span class="skill-tag"><i class="fa-solid fa-mobile-screen"></i> Responsive Web</span>
+                                </div>
+                            </div>
+
+                            <!-- Skill Card 2: UI/UX -->
+                            <div class="skill-card">
+                                <div class="skill-card-header">
+                                    <div class="icon-box uiux-icon"><i class="fa-solid fa-layer-group"></i></div>
+                                    <span class="skill-counter">02</span>
+                                </div>
+                                <h3>UI/UX Design</h3>
+                                <p>Merancang pengalaman digital intuitif yang memprioritaskan kebutuhan pengguna lewat metodologi <em>Design Thinking</em>.</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag"><i class="fa-brands fa-figma"></i> Figma</span>
+                                    <span class="skill-tag"><i class="fa-solid fa-compass-drafting"></i> Wireframing</span>
+                                    <span class="skill-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Prototyping</span>
+                                    <span class="skill-tag"><i class="fa-solid fa-users-viewfinder"></i> User Research</span>
+                                    <span class="skill-tag"><i class="fa-solid fa-lightbulb"></i> Design Thinking</span>
+                                </div>
+                            </div>
+
+                            <!-- Skill Card 3: System Analyst -->
+                            <div class="skill-card">
+                                <div class="skill-card-header">
+                                    <div class="icon-box system-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                                    <span class="skill-counter">03</span>
+                                </div>
+                                <h3>System Analysis</h3>
+                                <p>Menganalisis kebutuhan bisnis dan menerjemahkannya ke dalam dokumentasi serta diagram arsitektur sistem.</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag"><i class="fa-solid fa-sitemap"></i> Astah UML</span>
+                                    <span class="skill-tag"><i class="fa-solid fa-draw-polygon"></i> Draw.io</span>
+                                    <span class="skill-tag"><i class="fa-solid fa-circle-nodes"></i> Use Case & DFD</span>
+                                    <span class="skill-tag"><i class="fa-solid fa-database"></i> ERD / Relasi DB</span>
+                                    <span class="skill-tag"><i class="fa-solid fa-list-check"></i> Requirement Analysis</span>
+                                </div>
+                            </div>
+
+                            <!-- Skill Card 4: Tools & Creative -->
+                            <div class="skill-card">
+                                <div class="skill-card-header">
+                                    <div class="icon-box tools-icon"><i class="fa-solid fa-toolbox"></i></div>
+                                    <span class="skill-counter">04</span>
+                                </div>
+                                <h3>Tools & Media Digital</h3>
+                                <p>Alat pendukung produktivitas, manajemen repositori, CMS web, dan editing media kreatif.</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag"><i class="fa-brands fa-wordpress"></i> WordPress</span>
+                                    <span class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git & GitHub</span>
+                                    <span class="skill-tag"><i class="fa-brands fa-laravel"></i> Laravel 8 Stack</span>
+                                    <span class="skill-tag"><i class="fa-solid fa-film"></i> Video Editing</span>
+                                    <span class="skill-tag"><i class="fa-solid fa-terminal"></i> VS Code</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Skill Card 2: UI/UX -->
-                    <div class="skill-card">
-                        <div class="skill-card-header">
-                            <div class="icon-box uiux-icon"><i class="fa-solid fa-layer-group"></i></div>
-                            <span class="skill-counter">02</span>
-                        </div>
-                        <h3>UI/UX Design</h3>
-                        <p>Merancang pengalaman digital intuitif yang memprioritaskan kebutuhan pengguna lewat metodologi <em>Design Thinking</em>.</p>
-                        <div class="skill-tags">
-                            <span class="skill-tag"><i class="fa-brands fa-figma"></i> Figma</span>
-                            <span class="skill-tag"><i class="fa-solid fa-compass-drafting"></i> Wireframing</span>
-                            <span class="skill-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Prototyping</span>
-                            <span class="skill-tag"><i class="fa-solid fa-users-viewfinder"></i> User Research</span>
-                            <span class="skill-tag"><i class="fa-solid fa-lightbulb"></i> Design Thinking</span>
-                        </div>
-                    </div>
-
-                    <!-- Skill Card 3: System Analyst -->
-                    <div class="skill-card">
-                        <div class="skill-card-header">
-                            <div class="icon-box system-icon"><i class="fa-solid fa-diagram-project"></i></div>
-                            <span class="skill-counter">03</span>
-                        </div>
-                        <h3>System Analysis</h3>
-                        <p>Menganalisis kebutuhan bisnis dan menerjemahkannya ke dalam dokumentasi serta diagram arsitektur sistem.</p>
-                        <div class="skill-tags">
-                            <span class="skill-tag"><i class="fa-solid fa-sitemap"></i> Astah UML</span>
-                            <span class="skill-tag"><i class="fa-solid fa-draw-polygon"></i> Draw.io</span>
-                            <span class="skill-tag"><i class="fa-solid fa-circle-nodes"></i> Use Case & DFD</span>
-                            <span class="skill-tag"><i class="fa-solid fa-database"></i> ERD / Relasi DB</span>
-                            <span class="skill-tag"><i class="fa-solid fa-list-check"></i> Requirement Analysis</span>
-                        </div>
-                    </div>
-
-                    <!-- Skill Card 4: Tools & Creative -->
-                    <div class="skill-card">
-                        <div class="skill-card-header">
-                            <div class="icon-box tools-icon"><i class="fa-solid fa-toolbox"></i></div>
-                            <span class="skill-counter">04</span>
-                        </div>
-                        <h3>Tools & Media Digital</h3>
-                        <p>Alat pendukung produktivitas, manajemen repositori, CMS web, dan editing media kreatif.</p>
-                        <div class="skill-tags">
-                            <span class="skill-tag"><i class="fa-brands fa-wordpress"></i> WordPress</span>
-                            <span class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git & GitHub</span>
-                            <span class="skill-tag"><i class="fa-brands fa-laravel"></i> Laravel 8 Stack</span>
-                            <span class="skill-tag"><i class="fa-solid fa-film"></i> Video Editing</span>
-                            <span class="skill-tag"><i class="fa-solid fa-terminal"></i> VS Code</span>
-                        </div>
-                    </div>
+                    <button class="carousel-nav-arrow next" id="skills-next-btn" aria-label="Keahlian Selanjutnya">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
+
+                <!-- Skills Carousel Pagination Dots -->
+                <div class="carousel-dots-container" id="skills-dots" aria-label="Indikator slide keahlian"></div>
             </div>
         </section>
 
@@ -343,148 +359,163 @@
                     </button>
                 </div>
 
-                <!-- Projects Grid -->
-                <div class="projects-grid" id="projects-grid">
-                    
-                    <!-- Card 1: SIMAT -->
-                    <article class="project-card" data-category="web">
-                        <div class="project-media">
-                            <div class="project-carousel" data-carousel="simat">
-                                <div class="carousel-track">
-                                    <img src="image/simat.jpg" alt="SIMAT Screenshot 1" class="carousel-img active" onclick="openLightbox('image/simat.jpg', 'SIMAT - Gateway Login & Autentikasi Pengguna')">
-                                    <img src="image/simat 2.jpg" alt="SIMAT Screenshot 2" class="carousel-img" onclick="openLightbox('image/simat 2.jpg', 'SIMAT - Dashboard Manajemen Hak Akses')">
+                <!-- Projects Carousel Wrapper -->
+                <div class="cards-carousel-wrapper" id="projects-carousel">
+                    <button class="carousel-nav-arrow prev" id="projects-prev-btn" aria-label="Proyek Sebelumnya">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <div class="cards-carousel-viewport" id="projects-viewport">
+                        <div class="cards-carousel-track" id="projects-track">
+                            
+                            <!-- Card 1: SIMAT -->
+                            <article class="project-card" data-category="web">
+                                <div class="project-media">
+                                    <div class="project-carousel" data-carousel="simat">
+                                        <div class="carousel-track">
+                                            <img src="image/simat.jpg" alt="SIMAT Screenshot 1" class="carousel-img active" onclick="openLightbox('image/simat.jpg', 'SIMAT - Gateway Login & Autentikasi Pengguna')">
+                                            <img src="image/simat 2.jpg" alt="SIMAT Screenshot 2" class="carousel-img" onclick="openLightbox('image/simat 2.jpg', 'SIMAT - Dashboard Manajemen Hak Akses')">
+                                        </div>
+                                        <button class="carousel-btn prev" onclick="moveCarouselSlide(this, -1)" aria-label="Gambar Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
+                                        <button class="carousel-btn next" onclick="moveCarouselSlide(this, 1)" aria-label="Gambar Selanjutnya"><i class="fa-solid fa-chevron-right"></i></button>
+                                        <div class="carousel-indicator">
+                                            <span class="dot active"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                    <span class="project-category-badge web-badge"><i class="fa-solid fa-globe"></i> Web App</span>
                                 </div>
-                                <button class="carousel-btn prev" onclick="moveCarouselSlide(this, -1)" aria-label="Gambar Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
-                                <button class="carousel-btn next" onclick="moveCarouselSlide(this, 1)" aria-label="Gambar Selanjutnya"><i class="fa-solid fa-chevron-right"></i></button>
-                                <div class="carousel-indicator">
-                                    <span class="dot active"></span>
-                                    <span class="dot"></span>
+
+                                <div class="project-content">
+                                    <h3 class="project-title">SIMAT (Sistem Masuk Tunggal)</h3>
+                                    <p class="project-desc">
+                                        Platform Single Sign-On (SSO) dan gateway login terpusat yang mengatur dan memvalidasi akses pengguna secara aman sesuai paket langganan perangkat lunak mereka.
+                                    </p>
+                                    <div class="project-tags">
+                                        <span><i class="fa-brands fa-laravel"></i> Laravel 8</span>
+                                        <span><i class="fa-brands fa-bootstrap"></i> Bootstrap 5</span>
+                                        <span><i class="fa-solid fa-database"></i> MySQL</span>
+                                    </div>
+                                    <div class="project-footer">
+                                        <button class="btn-project-action" onclick="openLightbox('image/simat.jpg', 'SIMAT - Sistem Masuk Tunggal')">
+                                            <i class="fa-solid fa-expand"></i> Pratinjau Gambar
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                            <span class="project-category-badge web-badge"><i class="fa-solid fa-globe"></i> Web App</span>
-                        </div>
+                            </article>
 
-                        <div class="project-content">
-                            <h3 class="project-title">SIMAT (Sistem Masuk Tunggal)</h3>
-                            <p class="project-desc">
-                                Platform Single Sign-On (SSO) dan gateway login terpusat yang mengatur dan memvalidasi akses pengguna secara aman sesuai paket langganan perangkat lunak mereka.
-                            </p>
-                            <div class="project-tags">
-                                <span><i class="fa-brands fa-laravel"></i> Laravel 8</span>
-                                <span><i class="fa-brands fa-bootstrap"></i> Bootstrap 5</span>
-                                <span><i class="fa-solid fa-database"></i> MySQL</span>
-                            </div>
-                            <div class="project-footer">
-                                <button class="btn-project-action" onclick="openLightbox('image/simat.jpg', 'SIMAT - Sistem Masuk Tunggal')">
-                                    <i class="fa-solid fa-expand"></i> Pratinjau Gambar
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Card 2: EcoBank UI/UX Mobile -->
-                    <article class="project-card" data-category="uiux">
-                        <div class="project-media">
-                            <div class="project-img-single" onclick="openLightbox('image/Cover (2).png', 'EcoBank - UI/UX Mobile App Bank Sampah Cerdas')">
-                                <img src="image/Cover (2).png" alt="Desain Aplikasi Mobile EcoBank" loading="lazy">
-                                <div class="img-overlay-hover">
-                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
-                                    <span>Perbesar Desain</span>
+                            <!-- Card 2: EcoBank UI/UX Mobile -->
+                            <article class="project-card" data-category="uiux">
+                                <div class="project-media">
+                                    <div class="project-img-single" onclick="openLightbox('image/Cover (2).png', 'EcoBank - UI/UX Mobile App Bank Sampah Cerdas')">
+                                        <img src="image/Cover (2).png" alt="Desain Aplikasi Mobile EcoBank" loading="lazy">
+                                        <div class="img-overlay-hover">
+                                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                            <span>Perbesar Desain</span>
+                                        </div>
+                                    </div>
+                                    <span class="project-category-badge uiux-badge"><i class="fa-brands fa-figma"></i> UI/UX Concept</span>
                                 </div>
-                            </div>
-                            <span class="project-category-badge uiux-badge"><i class="fa-brands fa-figma"></i> UI/UX Concept</span>
-                        </div>
 
-                        <div class="project-content">
-                            <h3 class="project-title">Desain Aplikasi Mobile EcoBank</h3>
-                            <p class="project-desc">
-                                Konsep UI/UX aplikasi Bank Sampah digital berbasis <em>Design Thinking</em>, memfasilitasi penukaran sampah terpilah menjadi poin dan saldo e-wallet secara praktis.
-                            </p>
-                            <div class="project-tags">
-                                <span><i class="fa-brands fa-figma"></i> Figma</span>
-                                <span><i class="fa-solid fa-mobile-screen"></i> Mobile UI</span>
-                                <span><i class="fa-solid fa-lightbulb"></i> Design Thinking</span>
-                            </div>
-                            <div class="project-footer">
-                                <a href="https://www.figma.com/design/ZDkIf9xVr3fD5y0AYjyzYI/Bank-Sampah?node-id=0-1&t=w8WGQfaeNAvbJyiz-1" class="btn primary-btn btn-sm" target="_blank" rel="noopener noreferrer">
-                                    <span>Buka di Figma</span>
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
-                                <button class="btn-project-action" onclick="openLightbox('image/Cover (2).png', 'EcoBank - Desain UI/UX')">
-                                    <i class="fa-solid fa-expand"></i> Lihat
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Card 3: SIPEL -->
-                    <article class="project-card" data-category="web">
-                        <div class="project-media">
-                            <div class="project-carousel" data-carousel="sipel">
-                                <div class="carousel-track">
-                                    <img src="image/sipel.jpg" alt="SIPEL Screenshot 1" class="carousel-img active" onclick="openLightbox('image/sipel.jpg', 'SIPEL - Sistem Pelayaran Dashboard')">
-                                    <img src="image/sipel 2.jpg" alt="SIPEL Screenshot 2" class="carousel-img" onclick="openLightbox('image/sipel 2.jpg', 'SIPEL - Modul Pendataan Kapal & Logistik')">
+                                <div class="project-content">
+                                    <h3 class="project-title">Desain Aplikasi Mobile EcoBank</h3>
+                                    <p class="project-desc">
+                                        Konsep UI/UX aplikasi Bank Sampah digital berbasis <em>Design Thinking</em>, memfasilitasi penukaran sampah terpilah menjadi poin dan saldo e-wallet secara praktis.
+                                    </p>
+                                    <div class="project-tags">
+                                        <span><i class="fa-brands fa-figma"></i> Figma</span>
+                                        <span><i class="fa-solid fa-mobile-screen"></i> Mobile UI</span>
+                                        <span><i class="fa-solid fa-lightbulb"></i> Design Thinking</span>
+                                    </div>
+                                    <div class="project-footer">
+                                        <a href="https://www.figma.com/design/ZDkIf9xVr3fD5y0AYjyzYI/Bank-Sampah?node-id=0-1&t=w8WGQfaeNAvbJyiz-1" class="btn primary-btn btn-sm" target="_blank" rel="noopener noreferrer">
+                                            <span>Buka di Figma</span>
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                        </a>
+                                        <button class="btn-project-action" onclick="openLightbox('image/Cover (2).png', 'EcoBank - Desain UI/UX')">
+                                            <i class="fa-solid fa-expand"></i> Lihat
+                                        </button>
+                                    </div>
                                 </div>
-                                <button class="carousel-btn prev" onclick="moveCarouselSlide(this, -1)" aria-label="Gambar Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
-                                <button class="carousel-btn next" onclick="moveCarouselSlide(this, 1)" aria-label="Gambar Selanjutnya"><i class="fa-solid fa-chevron-right"></i></button>
-                                <div class="carousel-indicator">
-                                    <span class="dot active"></span>
-                                    <span class="dot"></span>
+                            </article>
+
+                            <!-- Card 3: SIPEL -->
+                            <article class="project-card" data-category="web">
+                                <div class="project-media">
+                                    <div class="project-carousel" data-carousel="sipel">
+                                        <div class="carousel-track">
+                                            <img src="image/sipel.jpg" alt="SIPEL Screenshot 1" class="carousel-img active" onclick="openLightbox('image/sipel.jpg', 'SIPEL - Sistem Pelayaran Dashboard')">
+                                            <img src="image/sipel 2.jpg" alt="SIPEL Screenshot 2" class="carousel-img" onclick="openLightbox('image/sipel 2.jpg', 'SIPEL - Modul Pendataan Kapal & Logistik')">
+                                        </div>
+                                        <button class="carousel-btn prev" onclick="moveCarouselSlide(this, -1)" aria-label="Gambar Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
+                                        <button class="carousel-btn next" onclick="moveCarouselSlide(this, 1)" aria-label="Gambar Selanjutnya"><i class="fa-solid fa-chevron-right"></i></button>
+                                        <div class="carousel-indicator">
+                                            <span class="dot active"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                    <span class="project-category-badge web-badge"><i class="fa-solid fa-globe"></i> Web App</span>
                                 </div>
-                            </div>
-                            <span class="project-category-badge web-badge"><i class="fa-solid fa-globe"></i> Web App</span>
-                        </div>
 
-                        <div class="project-content">
-                            <h3 class="project-title">SIPEL (Sistem Pelayaran)</h3>
-                            <p class="project-desc">
-                                Platform sistem informasi digital untuk mendata operasional pelayaran, manifest keberangkatan kapal, serta monitoring logistik maritim secara terstruktur.
-                            </p>
-                            <div class="project-tags">
-                                <span><i class="fa-brands fa-laravel"></i> Laravel 8</span>
-                                <span><i class="fa-brands fa-bootstrap"></i> Bootstrap 5</span>
-                                <span><i class="fa-solid fa-ship"></i> Logistik Maritim</span>
-                            </div>
-                            <div class="project-footer">
-                                <button class="btn-project-action" onclick="openLightbox('image/sipel.jpg', 'SIPEL - Sistem Pelayaran')">
-                                    <i class="fa-solid fa-expand"></i> Pratinjau Gambar
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Card 4: Lumobox -->
-                    <article class="project-card" data-category="web">
-                        <div class="project-media">
-                            <div class="project-img-single" onclick="openLightbox('image/lomobox.jpg', 'Lumobox - Dashboard Manajemen Keuangan')">
-                                <img src="image/lomobox.jpg" alt="Lumobox Financial Dashboard" loading="lazy">
-                                <div class="img-overlay-hover">
-                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
-                                    <span>Perbesar Gambar</span>
+                                <div class="project-content">
+                                    <h3 class="project-title">SIPEL (Sistem Pelayaran)</h3>
+                                    <p class="project-desc">
+                                        Platform sistem informasi digital untuk mendata operasional pelayaran, manifest keberangkatan kapal, serta monitoring logistik maritim secara terstruktur.
+                                    </p>
+                                    <div class="project-tags">
+                                        <span><i class="fa-brands fa-laravel"></i> Laravel 8</span>
+                                        <span><i class="fa-brands fa-bootstrap"></i> Bootstrap 5</span>
+                                        <span><i class="fa-solid fa-ship"></i> Logistik Maritim</span>
+                                    </div>
+                                    <div class="project-footer">
+                                        <button class="btn-project-action" onclick="openLightbox('image/sipel.jpg', 'SIPEL - Sistem Pelayaran')">
+                                            <i class="fa-solid fa-expand"></i> Pratinjau Gambar
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                            <span class="project-category-badge web-badge"><i class="fa-solid fa-globe"></i> Web App</span>
-                        </div>
+                            </article>
 
-                        <div class="project-content">
-                            <h3 class="project-title">Lumobox Financial Dashboard</h3>
-                            <p class="project-desc">
-                                Platform aplikasi web untuk membantu pengelolaan, monitoring kas, dan rekapitulasi data transaksi perbankan dengan antarmuka yang bersih dan mudah digunakan.
-                            </p>
-                            <div class="project-tags">
-                                <span><i class="fa-brands fa-laravel"></i> Laravel 8</span>
-                                <span><i class="fa-brands fa-bootstrap"></i> Bootstrap 5</span>
-                                <span><i class="fa-solid fa-chart-line"></i> FinTech</span>
-                            </div>
-                            <div class="project-footer">
-                                <button class="btn-project-action" onclick="openLightbox('image/lomobox.jpg', 'Lumobox - Manajemen Keuangan')">
-                                    <i class="fa-solid fa-expand"></i> Pratinjau Gambar
-                                </button>
-                            </div>
-                        </div>
-                    </article>
+                            <!-- Card 4: Lumobox -->
+                            <article class="project-card" data-category="web">
+                                <div class="project-media">
+                                    <div class="project-img-single" onclick="openLightbox('image/lomobox.jpg', 'Lumobox - Dashboard Manajemen Keuangan')">
+                                        <img src="image/lomobox.jpg" alt="Lumobox Financial Dashboard" loading="lazy">
+                                        <div class="img-overlay-hover">
+                                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                            <span>Perbesar Gambar</span>
+                                        </div>
+                                    </div>
+                                    <span class="project-category-badge web-badge"><i class="fa-solid fa-globe"></i> Web App</span>
+                                </div>
 
+                                <div class="project-content">
+                                    <h3 class="project-title">Lumobox Financial Dashboard</h3>
+                                    <p class="project-desc">
+                                        Platform aplikasi web untuk membantu pengelolaan, monitoring kas, dan rekapitulasi data transaksi perbankan dengan antarmuka yang bersih dan mudah digunakan.
+                                    </p>
+                                    <div class="project-tags">
+                                        <span><i class="fa-brands fa-laravel"></i> Laravel 8</span>
+                                        <span><i class="fa-brands fa-bootstrap"></i> Bootstrap 5</span>
+                                        <span><i class="fa-solid fa-chart-line"></i> FinTech</span>
+                                    </div>
+                                    <div class="project-footer">
+                                        <button class="btn-project-action" onclick="openLightbox('image/lomobox.jpg', 'Lumobox - Manajemen Keuangan')">
+                                            <i class="fa-solid fa-expand"></i> Pratinjau Gambar
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+
+                    <button class="carousel-nav-arrow next" id="projects-next-btn" aria-label="Proyek Selanjutnya">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
+
+                <!-- Projects Carousel Pagination Dots -->
+                <div class="carousel-dots-container" id="projects-dots" aria-label="Indikator slide proyek"></div>
             </div>
         </section>
 

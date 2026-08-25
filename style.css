@@ -894,6 +894,135 @@ body {
     gap: 26px;
 }
 
+/* --- Common Cards Carousel Styling --- */
+.cards-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.cards-carousel-viewport {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 20px 8px;
+    margin: -20px -8px;
+    cursor: grab;
+    user-select: none;
+}
+
+.cards-carousel-viewport.is-dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
+}
+
+.cards-carousel-viewport::-webkit-scrollbar {
+    display: none;
+}
+
+.cards-carousel-track {
+    display: flex;
+    gap: 24px;
+    align-items: stretch;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Skills Section Card Sizing inside Carousel */
+#skills-track .skill-card {
+    flex: 0 0 calc((100% - (2 * 24px)) / 3);
+    min-width: 280px;
+}
+
+/* Projects Section Card Sizing inside Carousel */
+#projects-track .project-card {
+    flex: 0 0 calc((100% - (2 * 24px)) / 3);
+    min-width: 300px;
+}
+
+/* Navigation Arrow Buttons */
+.carousel-nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    color: var(--text-heading);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all var(--transition);
+    outline: none;
+}
+
+.carousel-nav-arrow:hover:not(:disabled) {
+    background: var(--primary);
+    color: #FAF6ED;
+    border-color: var(--primary);
+    transform: translateY(-50%) scale(1.08);
+    box-shadow: 0 8px 24px rgba(var(--primary-rgb), 0.4);
+}
+
+.carousel-nav-arrow:disabled,
+.carousel-nav-arrow.disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: none;
+}
+
+.carousel-nav-arrow.prev {
+    left: -20px;
+}
+
+.carousel-nav-arrow.next {
+    right: -20px;
+}
+
+/* Pagination Dots */
+.carousel-dots-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    min-height: 24px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-full);
+    background: var(--border-color);
+    border: 1.5px solid rgba(var(--primary-rgb), 0.25);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    padding: 0;
+}
+
+.carousel-dot:hover {
+    background: rgba(var(--primary-rgb), 0.4);
+    transform: scale(1.15);
+}
+
+.carousel-dot.active {
+    width: 28px;
+    background: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 2px 10px rgba(var(--primary-rgb), 0.4);
+}
+
 .skill-card {
     background: var(--bg-card);
     border: 1px solid var(--border-card);
@@ -2066,6 +2195,23 @@ body {
         height: 380px;
     }
 
+    /* Carousel 2 items on tablet */
+    #skills-track .skill-card {
+        flex: 0 0 calc((100% - 24px) / 2);
+    }
+
+    #projects-track .project-card {
+        flex: 0 0 calc((100% - 24px) / 2);
+    }
+
+    .carousel-nav-arrow.prev {
+        left: -14px;
+    }
+
+    .carousel-nav-arrow.next {
+        right: -14px;
+    }
+
     .contact-wrapper {
         grid-template-columns: 1fr;
         padding: 36px 24px;
@@ -2152,6 +2298,35 @@ body {
         height: 350px;
     }
 
+    /* Carousel 1 item on mobile */
+    #skills-track .skill-card {
+        flex: 0 0 100%;
+        min-width: 100%;
+    }
+
+    #projects-track .project-card {
+        flex: 0 0 100%;
+        min-width: 100%;
+    }
+
+    .cards-carousel-wrapper {
+        padding: 0;
+    }
+
+    .carousel-nav-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 0.95rem;
+    }
+
+    .carousel-nav-arrow.prev {
+        left: -6px;
+    }
+
+    .carousel-nav-arrow.next {
+        right: -6px;
+    }
+
     .footer-container {
         grid-template-columns: 1fr;
         gap: 35px;
@@ -2175,8 +2350,12 @@ body {
         width: 100%;
     }
 
-    .projects-grid {
-        grid-template-columns: 1fr;
+    .carousel-nav-arrow.prev {
+        left: 2px;
+    }
+
+    .carousel-nav-arrow.next {
+        right: 2px;
     }
 
     .cv-modal-content {

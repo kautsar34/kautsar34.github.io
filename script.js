@@ -176,7 +176,293 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // ==========================================
-    // 5. PROJECT CATEGORY FILTER TABS
+    // 5. CAROUSEL COMPONENT (Skills & Projects)
+    // ==========================================
+    class CardCarousel {
+        constructor(wrapperId, options = {}) {
+            this.wrapper = document.getElementById(wrapperId);
+            if (!this.wrapper) return;
+
+            this.viewport = this.wrapper.querySelector('.cards-carousel-viewport');
+            this.track = this.wrapper.querySelector('.cards-carousel-track');
+            this.prevBtn = this.wrapper.querySelector('.carousel-nav-arrow.prev');
+            this.nextBtn = this.wrapper.querySelector('.carousel-nav-arrow.next');
+            this.dotsContainer = document.getElementById(options.dotsId);
+
+            this.currentIndex = 0;
+            this.autoPlay = options.autoPlay || false;
+            this.autoPlayDelay = options.autoPlayDelay || 6000;
+            this.autoPlayTimer = null;
+
+            // Drag state
+            this.isPointerDown = false;
+            this.startX = 0;
+            this.scrollLeftStart = 0;
+            this.dragDistance = 0;
+
+            this.init();
+        }
+
+        getVisibleCards() {
+            if (!this.track) return [];
+            return Array.from(this.track.children).filter(child => {
+                return window.getComputedStyle(child).display !== 'none';
+            });
+        }
+
+        getItemsPerView() {
+            if (!this.viewport || !this.track) return 1;
+            const cards = this.getVisibleCards();
+            if (cards.length === 0) return 1;
+            
+            const cardWidth = cards[0].offsetWidth;
+            const viewportWidth = this.viewport.offsetWidth;
+            const count = Math.round(viewportWidth / (cardWidth || 1));
+            return Math.max(1, Math.min(count, cards.length));
+        }
+
+        getMaxIndex() {
+            const cards = this.getVisibleCards();
+            const itemsPerView = this.getItemsPerView();
+            return Math.max(0, cards.length - itemsPerView);
+        }
+
+        init() {
+            if (!this.viewport || !this.track) return;
+
+            // Arrow button events
+            if (this.prevBtn) {
+                this.prevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    this.prev();
+                    this.resetAutoPlay();
+                });
+            }
+
+            if (this.nextBtn) {
+                this.nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    this.next();
+                    this.resetAutoPlay();
+                });
+            }
+
+            // Viewport scroll sync
+            let scrollDebounce;
+            this.viewport.addEventListener('scroll', () => {
+                clearTimeout(scrollDebounce);
+                scrollDebounce = setTimeout(() => {
+                    this.syncWithScroll();
+                }, 60);
+            }, { passive: true });
+
+            // Mouse Drag handling
+            this.viewport.addEventListener('mousedown', (e) => {
+                if (e.target.closest('button, a, .carousel-btn, .carousel-indicator')) return;
+
+                this.isPointerDown = true;
+                this.startX = e.pageX - this.viewport.offsetLeft;
+                this.scrollLeftStart = this.viewport.scrollLeft;
+                this.dragDistance = 0;
+                this.viewport.classList.add('is-dragging');
+                this.stopAutoPlay();
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (!this.isPointerDown) return;
+                const x = e.pageX - this.viewport.offsetLeft;
+                const walk = (x - this.startX) * 1.2;
+                this.dragDistance = Math.abs(walk);
+                this.viewport.scrollLeft = this.scrollLeftStart - walk;
+            });
+
+            window.addEventListener('mouseup', () => {
+                if (!this.isPointerDown) return;
+                this.isPointerDown = false;
+                this.viewport.classList.remove('is-dragging');
+                this.snapToNearestCard();
+                this.resetAutoPlay();
+            });
+
+            // Prevent unwanted click triggers after dragging
+            this.viewport.addEventListener('click', (e) => {
+                if (this.dragDistance > 8) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+            }, true);
+
+            // Touch events for mobile
+            this.viewport.addEventListener('touchstart', () => {
+                this.stopAutoPlay();
+            }, { passive: true });
+
+            this.viewport.addEventListener('touchend', () => {
+                this.resetAutoPlay();
+            }, { passive: true });
+
+            // Window resize handler
+            window.addEventListener('resize', () => {
+                this.update();
+            });
+
+            this.update();
+            this.startAutoPlay();
+        }
+
+        update() {
+            this.buildDots();
+            this.updateButtonStates();
+            this.updateActiveDot();
+        }
+
+        buildDots() {
+            if (!this.dotsContainer) return;
+            this.dotsContainer.innerHTML = '';
+
+            const maxIndex = this.getMaxIndex();
+            const totalDots = maxIndex + 1;
+
+            if (totalDots <= 1) {
+                this.dotsContainer.style.display = 'none';
+                return;
+            }
+
+            this.dotsContainer.style.display = 'flex';
+
+            for (let i = 0; i <= maxIndex; i++) {
+                const dot = document.createElement('button');
+                dot.className = `carousel-dot ${i === this.currentIndex ? 'active' : ''}`;
+                dot.setAttribute('aria-label', `Pindah ke slide ${i + 1}`);
+                dot.addEventListener('click', () => {
+                    this.goToIndex(i);
+                    this.resetAutoPlay();
+                });
+                this.dotsContainer.appendChild(dot);
+            }
+        }
+
+        updateButtonStates() {
+            const maxIndex = this.getMaxIndex();
+            const hasMultiple = maxIndex > 0;
+
+            if (this.prevBtn) {
+                this.prevBtn.disabled = !hasMultiple || this.currentIndex <= 0;
+                this.prevBtn.classList.toggle('disabled', !hasMultiple || this.currentIndex <= 0);
+            }
+
+            if (this.nextBtn) {
+                this.nextBtn.disabled = !hasMultiple || this.currentIndex >= maxIndex;
+                this.nextBtn.classList.toggle('disabled', !hasMultiple || this.currentIndex >= maxIndex);
+            }
+        }
+
+        updateActiveDot() {
+            if (!this.dotsContainer) return;
+            const dots = this.dotsContainer.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === this.currentIndex);
+            });
+        }
+
+        goToIndex(index) {
+            const cards = this.getVisibleCards();
+            const maxIndex = this.getMaxIndex();
+            this.currentIndex = Math.max(0, Math.min(index, maxIndex));
+
+            if (cards.length > 0 && cards[this.currentIndex]) {
+                const targetCard = cards[this.currentIndex];
+                const targetScroll = targetCard.offsetLeft - this.track.offsetLeft;
+                this.viewport.scrollTo({
+                    left: targetScroll,
+                    behavior: 'smooth'
+                });
+            }
+
+            this.updateButtonStates();
+            this.updateActiveDot();
+        }
+
+        next() {
+            const maxIndex = this.getMaxIndex();
+            if (this.currentIndex < maxIndex) {
+                this.goToIndex(this.currentIndex + 1);
+            } else if (this.autoPlay) {
+                this.goToIndex(0);
+            }
+        }
+
+        prev() {
+            if (this.currentIndex > 0) {
+                this.goToIndex(this.currentIndex - 1);
+            }
+        }
+
+        syncWithScroll() {
+            if (this.isPointerDown) return;
+            const cards = this.getVisibleCards();
+            if (cards.length === 0) return;
+
+            const scrollLeft = this.viewport.scrollLeft;
+            const trackOffset = this.track.offsetLeft;
+
+            let closestIndex = 0;
+            let minDiff = Infinity;
+
+            cards.forEach((card, idx) => {
+                const cardLeft = card.offsetLeft - trackOffset;
+                const diff = Math.abs(cardLeft - scrollLeft);
+                if (diff < minDiff) {
+                    minDiff = diff;
+                    closestIndex = idx;
+                }
+            });
+
+            const maxIndex = this.getMaxIndex();
+            this.currentIndex = Math.min(closestIndex, maxIndex);
+            this.updateButtonStates();
+            this.updateActiveDot();
+        }
+
+        snapToNearestCard() {
+            this.syncWithScroll();
+            this.goToIndex(this.currentIndex);
+        }
+
+        startAutoPlay() {
+            if (!this.autoPlay) return;
+            this.stopAutoPlay();
+            this.autoPlayTimer = setInterval(() => {
+                this.next();
+            }, this.autoPlayDelay);
+        }
+
+        stopAutoPlay() {
+            if (this.autoPlayTimer) {
+                clearInterval(this.autoPlayTimer);
+                this.autoPlayTimer = null;
+            }
+        }
+
+        resetAutoPlay() {
+            this.stopAutoPlay();
+            this.startAutoPlay();
+        }
+    }
+
+    // Initialize Carousels for Skills and Projects
+    const skillsCarousel = new CardCarousel("skills-carousel", {
+        dotsId: "skills-dots",
+        autoPlay: false
+    });
+
+    const projectsCarousel = new CardCarousel("projects-carousel", {
+        dotsId: "projects-dots",
+        autoPlay: false
+    });
+
+    // ==========================================
+    // 6. PROJECT CATEGORY FILTER TABS
     // ==========================================
     const filterButtons = document.querySelectorAll(".filter-btn");
     const projectCards = document.querySelectorAll(".project-card");
@@ -192,18 +478,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 const category = card.getAttribute("data-category");
                 if (filterValue === "all" || category === filterValue) {
                     card.style.display = "flex";
-                    setTimeout(() => {
-                        card.style.opacity = "1";
-                        card.style.transform = "scale(1)";
-                    }, 50);
+                    card.style.opacity = "1";
+                    card.style.transform = "scale(1)";
                 } else {
+                    card.style.display = "none";
                     card.style.opacity = "0";
                     card.style.transform = "scale(0.95)";
-                    setTimeout(() => {
-                        card.style.display = "none";
-                    }, 250);
                 }
             });
+
+            // Update Projects Carousel view and reset index
+            if (projectsCarousel) {
+                projectsCarousel.goToIndex(0);
+                setTimeout(() => {
+                    projectsCarousel.update();
+                }, 60);
+            }
         });
     });
 
